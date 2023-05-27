@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://da2lwsdq0wrkh"]
+[gd_scene load_steps=3 format=3 uid="uid://da2lwsdq0wrkh"]
 
+[ext_resource type="Script" path="res://Scripts/GameDataPath.gd" id="1_1xek8"]
 [ext_resource type="Script" path="res://Scripts/LoadingScreen.gd" id="2_4qm03"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_1xek8")
 
 [node name="LoadingScreen" type="Sprite2D" parent="."]
 script = ExtResource("2_4qm03")

@@ -1,5 +1,7 @@
 extends Node
 
+@onready var game_data_path = get_node("/root/GameDataPath")
+
 var data = []
 
 func get_data():
@@ -7,7 +9,7 @@ func get_data():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var file_path = "C:\\Users\\Leon\\Desktop\\The Good the Egg and the Ugly\\Game\\data\\output\\data\\loading\\sprites.txt"
+	var file_path = "{0}\\loading\\sprites.txt".format({0:game_data_path.path})
 	var string_data = loadStringFromFile(file_path)
 
 	data = splitLinesAndWordsDigits(string_data)

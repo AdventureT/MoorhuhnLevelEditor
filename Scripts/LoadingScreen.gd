@@ -7,7 +7,7 @@ extends Sprite2D
 func _ready():
 	var data = loading_sprites_data.get_data()
 	for data1 in data:
-		var file_path = "C:\\Users\\Leon\\Desktop\\The Good the Egg and the Ugly\\Game\\data\\output\\data\\loading\\sprites\\{0}.jpg".format({0:data1[0]})
+		var file_path = "{0}\\loading\\sprites\\{1}.jpg".format({1:data1[0], 0:loading_sprites_data.game_data_path.path})
 		var img = Image.new()
 		img.load(file_path)
 		var texture = ImageTexture.create_from_image(img)

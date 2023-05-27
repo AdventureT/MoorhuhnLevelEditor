@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+GameDataPath="*res://Scripts/GameDataPath.gd"
 LoadEntities="*res://Scripts/LoadEntities.gd"
 
 [editor]
