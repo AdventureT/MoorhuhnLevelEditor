@@ -7,12 +7,18 @@ extends Sprite2D
 func _ready():
 	var data = loading_sprites_data.get_data()
 	for data1 in data:
+		if data1[1] != "static":
+			var script := load("res://Scripts/LoadRLE.gd")
+			var images = script.LoadRLE("{0}\\loading\\sprites\\{1}.rle".format({1:data1[0], 0:loading_sprites_data.game_data_path.path}))
+			
+			var sprite = Sprite2D.new()
+			sprite.texture = ImageTexture.create_from_image(images[0])
+			$".".add_child(sprite)
+			
 		var file_path = "{0}\\loading\\sprites\\{1}.jpg".format({1:data1[0], 0:loading_sprites_data.game_data_path.path})
 		var img = Image.new()
 		img.load(file_path)
 		var texture = ImageTexture.create_from_image(img)
-		if data1[1] != "static":
-				push_error("Not supporting RLE Sprites")
 		if texture != null:
 			$".".texture = texture
 			$".".centered = false
